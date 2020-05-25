@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style/style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" >
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <script src="../stat/js/scripts.js"></script>
+    <script src="../stat/js/naselenie.js"></script>
+    <script src="../stat/js/uroven.js"></script>
+    <script src="../stat/js/obrazovanie.js"></script>
+    <script src="../stat/js/vvproduct.js"></script>
+    <script src="../stat/js/zdorovie.js"></script>
+    <script src="../stat/js/prestupnost.js"></script>
+    <script src="../stat/js/turizm.js"></script>
+    <script src="../stat/js/jilfond.js"></script>
+    
+   
+
+
+
+    <link rel="icon" href="../stat/img/favicon.png" type="image/x-icon" />
+
+    <title>Kyrgyz National Statistic Сommittee</title>
+</head>
+
+<body  onload="loadNaselenie()">
+
+
+
+
+
+    <header>
+        <div class="nav">
+            <div class="nav-logo"><a href="../stat/index.html"><img src="../stat/img/logo.png" alt=""></a></div>
+            <div class="nav-menu" >
+                <p class="nav__link" id="date"> </p>
+
+
+
+
+            </div>
+            <p class="nav__link" id="weather"></p>
+
+        </div>
+    </header>
+
+
+    <section class="home">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('img/slide-1.jpg')">
+                <div class="container">
+                    <div class="caption">
+                        <h1>Следи за дорогой!</h1>
+
+                        <p>Умерли в ДТП: 86 чел.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('img/slide-2.jpg')">
+                <div class="container">
+                    <div class="caption">
+                        <h1>Оставайся дома!</h1>
+                        <p>Зараженных коронавирусом: 1048 чел.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('img/slide-3.jpg')">
+                <div class="container">
+                    <div class="caption">
+
+                        <h1>Акция по озеленению</h1>
+                        <p>Дата: Бишкек 30.05.2020</p>
+                        <scroll-container>
+                            &nbsp; <a href="#reg">Подробнее</a>
+                        </scroll-container>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+
+        <!-- controls  -->
+        <div class="controls">
+            <div class="prev"><i class="fas fa-chevron-left"></i></div>
+            <div class="next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+
+        <!-- indicators -->
+        <div class="indicator">
+        </div>
+
+    </section>
+    <section>
+        <div class="nav2">
+            <div class="nav-logo"></div>
+            <div class="nav-menu">
+                <a href="about.html" class="nav__link">О нас </a>
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="faq.html" class="nav__link">F.A.Q.</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+
+
+
+
+        <section>
+            <div class="blog">
+                <div class="container">
+                    <div class="blog__text_center">
+                        <h1 id="maintxt">Население</h1>
+
+
+                    </div>
+
+                    <div class="subtitle">
+
+                        <div id="buttons">
+
+
+                            <a class="btn btn-icon btn-naselenie" onClick="loadNaselenie()" href="##"><i class="fas fa-male"></i><span>Население&emsp;&emsp;&emsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-uroven" onClick="loadLifeLevel()" href="##"> <i class="fas fa-layer-group"></i><span>Уровень жизни&emsp;&nbsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-edu" onClick="Obrazovanie()" href="##"><i class="fa fa-graduation-cap"></i><span>Образование&emsp;&nbsp;&nbsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-vvpi" onClick="VVProduct()" href="##"><i class="fas fa-money-bill-alt"></i><span>В.В.Продукт&emsp;&emsp;&nbsp;&nbsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-zdorovie" onClick="Zdorovie()" href="##"><i class="fa fa-heartbeat"></i><span>Здравохранение </span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-prestup" onClick="Prestupnost()"  href="##"><i class="fa fa-running"></i><span>Преступность&emsp;&nbsp;&nbsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-turizm" onClick="Turizm()" href="##"><i class="fa fa-plane-departure"></i><span>Туризм &emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</span></a>
+                            
+                            
+                            <a class="btn btn-icon btn-jilfond" onClick="Jilfond()" href="##"><i class="fa fa-home"></i><span>Жил.фонд&emsp;&emsp;&emsp;&nbsp;</span></a>
+
+                        </div>
+
+                        <div class="subtitle2">
+
+                            <div class="card-container">
+                                <div class="card" id="c1">
+                                    <div class="box" id="b1">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n1">90 </h2>
+                                                <h4 id="p1">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t1"></h3>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+                                <div class="card" id="c2">
+                                    <div class="box" id="b2">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n2">90 <span>%</span></h2>
+                                                <h4 id="p2">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t2">HTML</h3>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+                                <div class="card" id="c3">
+                                    <div class="box" id="b3">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n3">90 <span>%</span></h2>
+                                                <h4 id="p3">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t3">HTML</h3>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="card" id="c4">
+                                    <div class="box" id="b4">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n4">90 <span>%</span></h2>
+                                                <h4 id="p4">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t4">Прод-ть жизни</h3>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="card" id="c5">
+                                    <div class="box" id="b5">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n5">90 <span>%</span></h2>
+                                                <h4 id="p5">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t5">HTML</h3>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+                                <div class="card" id="c6">
+                                    <div class="box" id="b6">
+                                        <div class="percent">
+                                            <svg>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                                <circle cx="70" cy="70" r="70"> </circle>
+                                            </svg>
+                                            <div class="number">
+                                                <h2 id="n6">90 <span>%</span></h2>
+                                                <h4 id="p6">90 <span>%</span></h4>
+                                            </div>
+                                        </div>
+                                        <h3 class="text" id="t6">HTML</h3>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="static">
+            <div class="container">
+                <h1>Интересная статистика</h1>
+                <br> <br>
+
+                <div class="static__photo">
+                    <div class="static__item">
+                        <img src="img/g1.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g2.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g3.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g4.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g5.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g6.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g7.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g8.png" alt="stat">
+
+                    </div>
+
+                    <div class="static__item">
+                        <img src="img/g9.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g10.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g11.png" alt="stat">
+
+                    </div>
+                    <div class="static__item">
+                        <img src="img/g12.png" alt="stat">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="reg">
+            <div class="container">
+                <h1>Акция! 30.05.2020
+                </h1>
+                <p>"Посади своё дерево"
+
+                </p>
+            </div>
+            <div class="reg__button">
+                <a name="reg"><button>Регистрация</button></a>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-menu">
+                    <div class="nav-menu1">
+                        <a href="#" ><i class="fas fa-envelope">&nbsp;</i>natstatcom@gmail.com</a>
+
+
+                    </div>
+                    <div><i class="far fa-copyright"></i>&nbsp;Kyrgyz National Statistic Сommittee 2020</div>
+                    <div class="nav-menu2">
+                        <a href="#" ><i class="fas fa-map-marker-alt"></i>&nbsp;Manas str.109/2</a>
+
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://play.google.com/store/apps/details?id=org.iifund.nsc.android"><img src="img/item1.png" alt=""></a>
+                    <a href="https://apps.apple.com/kg/app/statkg-statistical-data-of-the-kyrgyz-republic/id1064925652"><img src="img/item2.png" alt=""> </a>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="../stat/js/main.js"></script>
+
+
+</body>
+
+</html>
